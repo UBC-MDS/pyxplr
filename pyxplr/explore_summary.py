@@ -1,6 +1,7 @@
 def explore_summary(dataframe):
     """
-    <Fill in description>
+    Returns a dataframe with basic summary statistics and wholistic
+    information about all the features of provided data
 
     Arguments
     ---------
@@ -9,8 +10,8 @@ def explore_summary(dataframe):
 
     Returns
     -------
-    type :
-        Return value description
+    pandas.DataFrame :
+        Dataframe with summary details on each feature
 
     Raises
     ------

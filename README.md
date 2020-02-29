@@ -23,10 +23,10 @@ pip install -i https://test.pypi.org/simple/ pyxplr
 
 ### Functions:
 
-- `get_summary` will display a table with basic summary statistics and wholistic information about the data. 
-- `get_featureviz` will provide various data visualizations of the whole data.
-- `get_outliers` will provide a thorough method of identifying outliers in the data.
-- `get_na` will show exactly where there is missing data and how much data is missing.
+- `explore_summary` will display a table with basic summary statistics and wholistic information about the data. 
+- `explore_feature_map` will provide various data visualizations of the whole data.
+- `explore_outliers` will provide a thorough method of identifying outliers in the data.
+- `explore_missing` will show exactly where there is missing data and how much data is missing.
 
 ### Python Ecosystem:
 

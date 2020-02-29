@@ -40,11 +40,11 @@ This package was created with Cookiecutter and the UBC-MDS/cookiecutter-ubc-mds 
 
 This python package will build upon the `pandas` and `altair` python packages that will make first time data science users get started in their projects more easily. A similar package `pandas profiling?` achieves a similar EDA tool. (not complete)
 
+### Contributions
+
+Contributions are welcome, and they are greatly appreciated! Every little bit
+helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) for further details.
+
 ### Contributors
 
-Contributors |
--------------|
-Serhiy Pokrovskyy |
-Furqan Khan |
-Braden Tam |
-Yu Fang |
+See [CONTRIBUTORS.md](CONTRIBUTORS.md)

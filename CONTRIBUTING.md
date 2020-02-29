@@ -8,7 +8,6 @@ You can contribute in many ways:
 
 ## Types of Contributions
 
-
 ### Report Bugs
 
 Report bugs at https://github.com/UBC-MDS/pyxplr/issues.
@@ -45,6 +44,16 @@ If you are proposing a feature:
 * Keep the scope as narrow as possible, to make it easier to implement.
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
+  
+## Submitting Your Contributions
+
+### Internal Contributions
+
+We utilize [Github Flow](https://guides.github.com/introduction/flow/) approach. If you have been granted access to the repository, please follow this approach. All development should be done in feature-specific branches branched off `master`. Once ready, submit a pull request from your feature branch to `master`.
+
+### External Contributions  
+
+Even if you are not a team member, your contributions are very welcome. In this case please use fork+PR approach - fork the repository, work on your changes and then submit a pull request back to the repository. We will be glad to review and hopefully approve it!
 
 ## Get Started!
 

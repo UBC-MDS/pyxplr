@@ -1,21 +1,21 @@
 def explore_outliers(dataframe):
     """
-    <Fill in description>
+    Explores outliers in each feature of dataset based on standard deviation. 
 
     Arguments
     ---------
-    dataframe : pandas.DataFrame
+    DataFrame : pandas.DataFrame
         The target dataframe to explore
 
     Returns
     -------
-    type :
-        Return value description
+    DataFrame :
+        Dataframe containing the number of outliers for each feature
 
     Raises
     ------
-    Error
-        Description
+    ValueError
+        Features specification includes an invalid / non-existent feature
 
     Notes
     -----
@@ -23,6 +23,7 @@ def explore_outliers(dataframe):
 
     Examples
     --------
-
+    outliers = explore_outliers(df)
+    outliers
     """
     raise NotImplemented

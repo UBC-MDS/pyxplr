@@ -34,11 +34,11 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Dependencies:
 
-- TODO
+- to be defined later as development starts
 
 ### Usage:
 
-- TODO
+- to be defined later as development starts
 
 ### Documentation:
 The official documentation is hosted on Read the Docs: <https://pyxplr.readthedocs.io/en/latest/>

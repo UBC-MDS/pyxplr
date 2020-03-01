@@ -55,3 +55,4 @@ Furqan Khan |
 Braden Tam |
 Yu Fang |
 
+For the complete list of project contributors, see [CONTRIBUTORS.md](CONTRIBUTORS.md)

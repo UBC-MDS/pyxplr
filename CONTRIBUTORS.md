@@ -1,10 +1,12 @@
 # Credits
 
+## Development Team
 
-## Development Lead
-
-* Yu Fang <fang8@ualberta.ca>
+* Braden Tam
+* Furqan Khan
+* Serhiy Pokrovskyy  
+* Yu Fang 
 
 ## Contributors
 
-None yet. Why not be the first?
+None yet. Why not be the first? Also, please read [CONTRIBUTING.md](CONTRIBUTING.md).

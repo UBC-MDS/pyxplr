@@ -1,4 +1,5 @@
-from pyxplr import pyxplr
+import pytest
+from pyxplr import explore_summary
 import pandas as pd
 
 # Test data
@@ -10,4 +11,6 @@ df = pd.DataFrame({"A":[12, 4, 5, 44, 1],
 def test_explore_summary():
   result = explore_summary(df)
   assert result.shape[0] == 8
+
+
 

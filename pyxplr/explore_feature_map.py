@@ -54,6 +54,9 @@ def explore_feature_map(df, features=[]):
     if not isinstance(df, pd.DataFrame):
         raise ValueError('Invalid dataframe specified')
 
+    if df.shape[0] == 0:
+        raise ValueError('Empty dataframe specified')
+
     if not isinstance(features, list):
         raise ValueError('Invalid features specification')
 

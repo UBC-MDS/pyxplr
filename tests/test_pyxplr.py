@@ -1,7 +1,6 @@
 from pyxplr import pyxplr
 import pandas as pd
 
-
 def test_explore_outliers():
     """
     Tests the explore_outliers function with a simple dataframe that contains

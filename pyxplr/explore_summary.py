@@ -1,6 +1,7 @@
 import pandas as pd
-import random 
-def explore_summary(clean_data):
+import random as rd
+
+def explore_summary(df):
     """
     Print out the column names for categorical columns and 
     numeric columns and the basic statistics summary: mean, variance, 
@@ -50,7 +51,7 @@ def explore_summary(clean_data):
     num_index = []
     num = []
     for i in range(len(df.columns)):
-        random = randint(0, len(df)-1)
+        random = random = rd.randint(0, len(df)-1)
         a=df.iat[random,i]
         if type(a)==str:
             ctg_index.append(i)

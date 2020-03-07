@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import altair as alt
+from vega_datasets import data
+
+alt.data_transformers.disable_max_rows()
 
 
 def explore_feature_map(df, features=[]):
@@ -82,7 +85,7 @@ def explore_feature_map(df, features=[]):
             else:
                 if (i + j) in checked_pairs:
                     # Features joint distribution plot
-                    row |= alt.Chart(df[[i, j]]).mark_point(size=1, opacity=0.5, fill='#0f4c81').encode(
+                    row |= alt.Chart(df[[i, j]]).mark_point(size=5, opacity=0.5, fill='#0f4c81').encode(
                         alt.X(f"{i}:Q", axis=None),
                         alt.Y(f"{j}:Q", axis=None),
                     ).properties(width=100, height=100)

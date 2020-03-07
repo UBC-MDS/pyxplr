@@ -36,10 +36,6 @@ def explore_missing(data, num_rows = 0, type = "location"):
     NameError
         Type must be either "count" or "location"
 
-    Notes
-    -----
-    (Additional notes to be filled during development)
-
     Examples
     --------
     >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4], 'col2': [2, 3, 4, 5, 6]})

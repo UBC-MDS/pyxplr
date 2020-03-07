@@ -23,16 +23,22 @@ def test_count():
 def test_type():
     assert(isinstance(explore_missing(test_1), pd.DataFrame))
     assert(isinstance(explore_missing(test_1, type = "count"), pd.DataFrame))
+    assert(isinstance(explore_missing(test_1, type = "location"), pd.DataFrame))
 
-def test_valid_error():
+def test_value_error():
     try:
         explore_missing(test_2)
     except:
         assert True
 
-
-def test_datatype_error():
+def test_type_error():
     try:
         explore_missing(test_3)
+    except:
+        assert True
+
+def test_name_error():
+    try:
+        explore_missing(test_1, type = "loc")
     except:
         assert True

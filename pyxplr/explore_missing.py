@@ -33,6 +33,8 @@ def explore_missing(data, num_rows = 0, type = "location"):
         There are no missing values in the dataframe
     TypeError
         Data must be a pandas DataFrame
+    NameError
+        Type must be either "count" or "location"
 
     Notes
     -----
@@ -52,15 +54,17 @@ def explore_missing(data, num_rows = 0, type = "location"):
     col 1                          0                             0
 
     """
+    if not isinstance(data, pd.DataFrame):
+        raise TypeError("Data must be a pandas DataFrame")
 
-    indices = np.where(test.isnull())[0]
-    
+    if not (type == "count") | (type == "location"):
+        raise NameError('Type must be either "count" or "location"')
+
+    indices = np.where(data.isnull())[0]
+
     if len(indices) == 0:
         raise ValueError("There are no missing values in the dataframe")
         
-    if not isinstance(data, pd.DataFrame):
-        raise TypeError("Data must be a pandas DataFrame")
-    
     new_indices = np.empty(0)
     for index in indices:
         for num in np.array(range(1, num_rows + 1)):
@@ -72,12 +76,11 @@ def explore_missing(data, num_rows = 0, type = "location"):
     # avoids index error
     rows = rows[(rows >= 0) & (rows < len(data))]
     
+    # number of missing values
     if type == "count":
-        # number of missing values
-        return pd.DataFrame({'Number of missing values': np.sum(test.isnull()),
-                             'Proportion of missing data': np.sum(test.isnull()) / len(test)})
+        return pd.DataFrame({'Number of missing values': np.sum(data.isnull()),
+                             'Proportion of missing data': np.sum(data.isnull()) / len(data)})
 
     # location of missing data
-    return pd.DataFrame(data.iloc[rows])
-
-    raise NotImplemented
+    if type == "location":
+        return pd.DataFrame(data.iloc[rows])

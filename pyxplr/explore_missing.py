@@ -19,7 +19,7 @@ def explore_missing(data, num_rows = 0, type = "location"):
         The target dataframe to explore
     num_rows : integer
         The number of rows above and below the missing value to output 
-    table: str
+    type: str
         The desired type of output (location or count)
 
     Returns

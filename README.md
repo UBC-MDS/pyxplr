@@ -18,7 +18,7 @@ pip install -i https://test.pypi.org/simple/ pyxplr
 
 ### Functions
 
-- `explore_summary` will display a table with basic summary statistics and wholistic information about the data including column names for both categorical and numerical collumns. 
+- `explore_summary` will display a table with basic summary statistics and wholistic information about the data including column names for both categorical and numerical columns. 
 - `explore_feature_map` will generate a faceted plot on pairwise feature relationships and correlations as well as individual feature distributions.
 - `explore_outliers` will provide outliers for each feature of data based on standard deviation.
 - `explore_missing` will show exactly where there is missing data and how much data is missing.
@@ -38,7 +38,7 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 - `explore_summary(my_df)`
 - `explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])`
-![](https://github.com/UBC-MDS/pyxplr/imgs/feature_map.png)
+!(https://github.com/UBC-MDS/pyxplrimgs/feature_map.png)
 - `explore_outliers(my_df)`
 - `explore_missing(my_df, num_rows = 1, type = "location")`
 

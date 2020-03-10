@@ -29,20 +29,15 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Dependencies:
 
-- `pandas`
-- `numpy`
-- `altair`
-- `random`
+- `pandas 1.0.1`
+- `numpy 1.18.1`
+- `altair 3.2.0`
 
 ### Usage:
 
 - `explore_summary(my_df)`
 - `explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])`
-<<<<<<< HEAD
-!(https://github.com/UBC-MDS/pyxplrimgs/feature_map.png)
-=======
    ![](/imgs/feature_map.png)
->>>>>>> origin/master
 - `explore_outliers(my_df)`
 - `explore_missing(my_df, num_rows = 1, type = "location")`
 
@@ -59,11 +54,11 @@ helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) f
 
 ### Contributors
 
-Contributors |
--------------|
-Serhiy Pokrovskyy |
-Furqan Khan |
-Braden Tam |
-Yu Fang |
+Name     | Github ID
+:------- |:-------
+Braden Tam   | bradentam
+Furqan Khan  | fkhan72
+Serhiy Pokrovskyy | pokrovskyy
+Yu Fang | lori94
 
 For the complete list of project contributors, see [CONTRIBUTORS.md](CONTRIBUTORS.md)

@@ -1,4 +1,7 @@
-def explore_summary(clean_data):
+import pandas as pd
+import random as rd
+
+def explore_summary(df):
     """
     Print out the column names for categorical columns and 
     numeric columns and the basic statistics summary: mean, variance, 
@@ -25,12 +28,11 @@ def explore_summary(clean_data):
                    "C":["2", "1", "3", "4", "6"], 
                    "D":[14, 3, 17, 2, 6]}) 
                    
-    explore_summary(df)
-    
+    >>>explore_summary(df)
+
     categorical columns: ['B', 'C']
     numeric columns: ['A', 'D']
-    -----------------------------------------------------
-    numeric summary for numeric columns:
+
                   A     D
     count       5.0   5.0
     Min.        1.0   2.0
@@ -49,7 +51,7 @@ def explore_summary(clean_data):
     num_index = []
     num = []
     for i in range(len(df.columns)):
-        random = randint(0, len(df)-1)
+        random = random = rd.randint(0, len(df)-1)
         a=df.iat[random,i]
         if type(a)==str:
             ctg_index.append(i)
@@ -64,8 +66,8 @@ def explore_summary(clean_data):
 
     print("categorical columns:", ctg)
     print("numeric columns:", num)
-    print("-----------------------------------------------------")
-    print("numeric summary for numeric columns:")
+   
+    # Statistical summary for numeric variables
     num_df = df[num]
     result = pd.DataFrame(num_df.count().rename("count")).T
     result = result.append(pd.DataFrame(num_df.min().rename("Min.")).T)
@@ -75,5 +77,5 @@ def explore_summary(clean_data):
     result = result.append(pd.DataFrame(num_df.quantile(0.75).rename("3rd Qu.")).T)
     result = result.append(pd.DataFrame(num_df.max().rename("Max.")).T)
     result = result.append(pd.DataFrame(num_df.var().rename("Variance")).T)
-    return(result)
+    return result 
     

@@ -38,7 +38,11 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 - `explore_summary(my_df)`
 - `explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])`
+<<<<<<< HEAD
 !(https://github.com/UBC-MDS/pyxplrimgs/feature_map.png)
+=======
+   ![](/imgs/feature_map.png)
+>>>>>>> origin/master
 - `explore_outliers(my_df)`
 - `explore_missing(my_df, num_rows = 1, type = "location")`
 

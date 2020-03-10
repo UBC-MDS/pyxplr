@@ -1,4 +1,4 @@
-from pyxplr.explore_missing import explore_missing
+from pyxplr import explore_missing
 import numpy as np
 import pandas as pd 
 import pytest

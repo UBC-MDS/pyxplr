@@ -2,7 +2,7 @@ import pytest
 import altair as alt
 import pandas as pd
 from vega_datasets import data
-from pyxplr.explore_feature_map import explore_feature_map
+from pyxplr import explore_feature_map
 
 def test_export_feature_viz_return_type():
     out = explore_feature_map(data.iris())

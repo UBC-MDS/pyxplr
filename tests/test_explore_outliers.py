@@ -1,4 +1,4 @@
-from pyxplr.explore_outliers import explore_outliers
+from pyxplr import explore_outliers
 import pandas as pd
 
 def test_explore_outliers():

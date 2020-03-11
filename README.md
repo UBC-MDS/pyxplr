@@ -14,10 +14,10 @@ pip install -i https://test.pypi.org/simple/ pyxplr
 
 ### Functions
 
-- `explore_summary` will display a table with basic summary statistics and wholistic information about the data including column names for both categorical and numerical collumns. 
-- `explore_feature_map` will generate a faceted plot on pairwise feature relationships and correlations as well as individual feature distributions.
+- `explore_summary` will display a table with basic summary statistics and wholistic information about the data including column names for both categorical and numerical columns. 
 - `explore_outliers` will provide outliers for each feature of data based on standard deviation.
 - `explore_missing` will show exactly where there is missing data and how much data is missing.
+- `explore_feature_map` will generate a faceted plot on pairwise feature relationships and correlations as well as individual feature distributions.
 
 ### Python Ecosystem
 
@@ -25,18 +25,24 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Dependencies:
 
-- `pandas`
-- `numpy`
-- `altair`
-- `random`
+- `pandas 1.0.1`
+- `numpy 1.18.1`
+- `altair 3.2.0`
 
 ### Usage:
 
-- `explore_summary(my_df)`
-- `explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])`
-   ![](/imgs/feature_map.png)
-- `explore_outliers(my_df)`
-- `explore_missing(my_df, num_rows = 1, type = "location")`
+``` 
+from xplyr import explore_summary
+from xplyr import explore_outliers
+from xplyr import explore_missing
+from xplyr import explore_feature_map
+
+explore_summary(my_df)
+explore_outliers(my_df)
+explore_missing(my_df, num_rows = 1, type = "location")
+explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])
+```
+![](/imgs/feature_map.png)
 
 ### Documentation:
 The official documentation is hosted on Read the Docs: <https://pyxplr.readthedocs.io/en/latest/>
@@ -51,11 +57,11 @@ helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) f
 
 ### Contributors
 
-Contributors |
--------------|
-Serhiy Pokrovskyy |
-Furqan Khan |
-Braden Tam |
-Yu Fang |
+Name     | Github ID
+:------- |:-------
+Braden Tam   | bradentam
+Furqan Khan  | fkhan72
+Serhiy Pokrovskyy | pokrovskyy
+Yu Fang | lori94
 
 For the complete list of project contributors, see [CONTRIBUTORS.md](CONTRIBUTORS.md)

@@ -1,4 +1,4 @@
-from pyxplr.explore_summary import explore_summary
+from pyxplr import explore_summary
 import pandas as pd
 
 # Test data

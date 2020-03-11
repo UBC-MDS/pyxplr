@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import altair as alt
-from vega_datasets import data
 
 alt.data_transformers.disable_max_rows()
 
@@ -88,20 +87,33 @@ def explore_feature_map(df, features=[]):
             else:
                 if (i + j) in checked_pairs:
                     # Features joint distribution plot
-                    row |= alt.Chart(df[[i, j]]).mark_point(size=5, opacity=0.5, fill='#0f4c81').encode(
+                    row |= alt.Chart(df[[i, j]]).mark_point(fill='#0f4c81',
+                                                            opacity=0.5,
+                                                            size=5).encode(
                         alt.X(f"{i}:Q", axis=None),
                         alt.Y(f"{j}:Q", axis=None),
                     ).properties(width=100, height=100)
                 else:
                     # Pearson correlation block
-                    corr = np.corrcoef(df[i].values, df[j].values)[0][1].round(4)
-                    row |= alt.Chart(pd.DataFrame({'corr': [corr]})).mark_text(baseline='middle', size=16).encode(
-                        text='corr:Q').properties(width=100, height=100)
+                    corr = np.corrcoef(
+                        df[i].values, df[j].values)[0][1].round(4)
+                    row |= alt.Chart(pd.DataFrame({'corr': [corr]})).mark_text(
+                        baseline='middle',
+                        size=16).encode(text='corr:Q').properties(width=100,
+                                                                  height=100)
                     checked_pairs.add(j + i)
 
         # Add row name to the right
-        row |= alt.Chart(pd.DataFrame({'caption': [i]})).mark_text(baseline='middle', angle=270, size=12).encode(
-            text='caption:N').properties(width=30, height=100)
+        row |= alt.Chart(
+            pd.DataFrame(
+                {
+                    'caption': [i]})).mark_text(
+            baseline='middle',
+            angle=270,
+            size=12).encode(
+            text='caption:N').properties(
+            width=30,
+            height=100)
 
         # Append row to the chart
         if chart:
@@ -112,8 +124,10 @@ def explore_feature_map(df, features=[]):
     # Bottom captions row
     row = alt.hconcat()
     for i in df.columns:
-        row |= alt.Chart(pd.DataFrame({'caption': [i]})).mark_text(baseline='middle', size=12).encode(
-            text='caption:N').properties(width=100, height=30)
+        row |= alt.Chart(pd.DataFrame({'caption': [i]})).mark_text(
+            baseline='middle',
+            size=12).encode(text='caption:N').properties(width=100,
+                                                         height=30)
 
     chart &= row
 

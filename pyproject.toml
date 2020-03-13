@@ -11,6 +11,7 @@ pandas = "^1.0.1"
 numpy = "^1.18.1"
 altair = "^3.2.0"
 vega_datasets = "^0.8.0"
+flake8 = "^3.7.9"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^2.4.3"

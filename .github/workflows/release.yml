@@ -2,7 +2,7 @@ name: Release
 
 on: 
   push:
-    branches: [documentation]
+    branches: [master]
     
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@master
       with:
-        ref: documentation
+        ref: master
         fetch-depth: '0'
     - name: Temporarily disable "include administrators" branch protection
       uses: benjefferies/branch-protection-bot@master

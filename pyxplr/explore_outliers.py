@@ -39,9 +39,7 @@ def explore_outliers(df):
         outlier_count = 0
 
         for n in c:
-            if lower_bound <= n <= upper_bound:
-                pass
-            else:
+            if not (lower_bound <= n <= upper_bound):
                 outlier_count += 1
         df_outlier.loc[i] = outlier_count
     return df_outlier

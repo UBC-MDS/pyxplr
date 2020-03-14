@@ -27,7 +27,6 @@ def explore_outliers(df):
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("input data type must be pandas.DataFrame")
-        
     df = df.dropna()
     df = df.select_dtypes(include=['int64', 'float64'])
     df_outlier = pd.DataFrame({'outlier_count': []})

@@ -13,13 +13,13 @@ def test_explore_outliers():
     result = explore_outliers(df)
     assert result['outlier_count'][0] == 1
     assert result['outlier_count'][1] == 0
-    
+
+
 def test_pd_df():
     """
-    Tests the exception raised by the explore_outliers function 
-    for wrong input type
+    Tests exception raised by explore_outliers function for wrong input type
     """
     try:
-        explore_missing(2)
+        explore_outliers(2)
     except BaseException:
         assert True

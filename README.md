@@ -4,7 +4,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/pyxplr/badge/?version=latest)](https://pyxplr.readthedocs.io/en/latest/?badge=latest)
 
-`pyxplr` is a python package to make explatory data analysis (EDA) simple and seamless. EDA is a crucial phase of the data science workflow as it allows us get a fist glimpse of the data. It is important to identify statistical characteristics of the data so that researchers can properly set up the rest of the analysis. This package will provide the tools required to conduct a thorough EDA.
+`pyxplr` is a python package to make exploratory data analysis (EDA) simple and seamless. EDA is a crucial phase of the data science workflow as it allows us get a fist glimpse of the data. It is important to identify statistical characteristics of the data so that researchers can properly set up the rest of the analysis. This package will provide the tools required to conduct a thorough EDA.
 
 ### Installation
 
@@ -31,16 +31,46 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Usage:
 
-``` 
-from xplyr import explore_summary
-from xplyr import explore_outliers
-from xplyr import explore_missing
-from xplyr import explore_feature_map
+``` python
+>>> from xplyr import explore_summary
+>>> from xplyr import explore_outliers
+>>> from xplyr import explore_missing
+>>> from xplyr import explore_feature_map
 
-explore_summary(my_df)
-explore_outliers(my_df)
-explore_missing(my_df, num_rows = 1, type = "location")
-explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])
+>>> dataset = data.wheat()
+
+>>> explore_summary(dataset)
+categorical columns: []
+numeric columns: ['year', 'wheat', 'wages']
+                   year	    wheat	    wages
+count	      52.000000	 52.000000	50.000000
+Min.	    1565.000000	 26.000000	 5.000000
+1st Qu. 	1628.750000	 32.750000	 6.145000
+Median  	1692.500000	 40.750000	 7.800000
+Mean	    1692.500000	 43.057692	11.581600
+3rd Qu. 	1756.250000	 46.625000	14.875000
+Max.	    1820.000000	 99.000000	30.000000
+Variance	5741.666667	239.829940	53.821112
+
+>>> explore_outliers(my_df)
+	    outlier_count
+year	          0.0
+wheat	          5.0
+wages	         52.0
+
+>>> explore_missing(dataset, type = "location")
+    year	wheat	wages
+50	1815	 78.0	  NaN
+51	1820	 54.0	  NaN
+
+>>> explore_missing(dataset, type = "count"))
+	    Number of missing values	Proportion of missing data
+year	                       0                   	  0.000000
+wheat	                       0                	  0.000000
+wages	                       2	                  0.038462
+
+
+>>> explore_feature_map(dataset)
 ```
 ![](/imgs/feature_map.png)
 

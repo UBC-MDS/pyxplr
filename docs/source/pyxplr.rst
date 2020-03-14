@@ -36,22 +36,6 @@ pyxplr.explore\_summary module
    :undoc-members:
    :show-inheritance:
 
-pyxplr.pyxplr module
---------------------
-
-.. automodule:: pyxplr.pyxplr
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyxplr.s module
----------------
-
-.. automodule:: pyxplr.s
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------

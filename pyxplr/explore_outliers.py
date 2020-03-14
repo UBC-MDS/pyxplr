@@ -4,25 +4,29 @@ import pandas as pd
 def explore_outliers(df):
     """
     Explores outliers in each feature of dataset based on standard deviation.
+
     Arguments
     ---------
     DataFrame : pandas.DataFrame
-        The target dataframe to explore
+        The target dataframe to explore.
+
     Returns
     -------
     DataFrame : pandas.DataFrame
-        Dataframe containing the number of outliers for each numeric feature
+        Dataframe containing the number of outliers for each numeric feature.
+
     Raises
     ------
-    TypeError
-        Raises exception if the input is not pandas.DataFrame
+    TypeError. Raises exception if the input is not pandas.DataFrame.
+
     Notes
     -----
-    Does not consider non-numeric features
+    Does not consider non-numeric features.
+
     Examples
     --------
-    df = pd.DataFrame({'col1': [1, 2, 1.00, 3, -1, 100],
-                   'col2': [3, 1 ,5, -2, 3, -1]})
+    df = pd.DataFrame({'col1': [1, 2, 1.00, 3, -1, 100], \
+                       'col2': [3, 1 ,5, -2, 3, -1]})
     explore_outliers(df)
     """
     if not isinstance(df, pd.DataFrame):

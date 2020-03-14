@@ -35,7 +35,7 @@ jobs:
         yml: ./codecov.yml 
         fail_ci_if_error: true
     - name: checkout
-        uses: actions/checkout@documentation
+        uses: actions/checkout@v2
         with:
           ref: documentation
           fetch-depth: '0'

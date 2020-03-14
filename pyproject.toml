@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyxplr"
-version = "0.3.2"
+version = "0.3.3"
 description = "Python package that provides some basic data information for EDA!"
 authors = ["Braden Tam", "Furqan Khan", "Serg Pokrovskyy", "Yu Fang"]
 license = "MIT"

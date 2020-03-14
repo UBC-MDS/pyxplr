@@ -35,10 +35,10 @@ jobs:
         yml: ./codecov.yml 
         fail_ci_if_error: true
     - name: checkout
-        uses: actions/checkout@v2
-        with:
-          ref: documentation
-          fetch-depth: '0'
+      uses: actions/checkout@documentation
+      with:
+        ref: documentation
+        fetch-depth: '0'
     - name: Temporarily disable "include administrators" branch protection
       uses: benjefferies/branch-protection-bot@master
       if: always()

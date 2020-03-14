@@ -1,13 +1,23 @@
 [tool.poetry]
 name = "pyxplr"
-version = "0.1.0"
+version = "0.3.5"
 description = "Python package that provides some basic data information for EDA!"
 authors = ["Braden Tam", "Furqan Khan", "Serg Pokrovskyy", "Yu Fang"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/UBC-MDS/pyxplr"
+repository = "https://github.com/UBC-MDS/pyxplr"
+documentation = 'https://pyxplr.readthedocs.io'
+
+[tool.semantic_release]
+version_variable = "pyxplr/__init__.py:__version__"
+version_source = "commit"
+upload_to_pypi = "false"
+patch_without_tag = "true"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-pandas = "^1.0.1"
+pandas = "*"
 numpy = "^1.18.1"
 altair = "^3.2.0"
 
@@ -18,7 +28,9 @@ pytest = "^5.3.5"
 pytest-cov = "^2.8.1"
 flake8 = "^3.7.9"
 vega_datasets = "^0.8.0"
+python-semantic-release = "^4.10.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+

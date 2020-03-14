@@ -31,6 +31,7 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Usage:
 
+
 ``` python
 >>> from xplyr import explore_summary
 >>> from xplyr import explore_outliers
@@ -88,7 +89,7 @@ helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) f
 ### Contributors
 
 Name     | Github ID
-:------- |:-------
+------- | -------
 Braden Tam   | bradentam
 Furqan Khan  | fkhan72
 Serhiy Pokrovskyy | pokrovskyy

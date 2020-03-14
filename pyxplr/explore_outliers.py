@@ -30,8 +30,8 @@ def explore_outliers(df):
     explore_outliers(df)
     """
     if not isinstance(df, pd.DataFrame):
-        raise Exception("input type must be pandas.DataFrame")
-
+        raise TypeError("input data type must be pandas.DataFrame")
+    df = df.dropna()
     df = df.select_dtypes(include=['int64', 'float64'])
     df_outlier = pd.DataFrame({'outlier_count': []})
     for i in df:
@@ -43,9 +43,7 @@ def explore_outliers(df):
         outlier_count = 0
 
         for n in c:
-            if lower_bound <= n <= upper_bound:
-                pass
-            else:
+            if not (lower_bound <= n <= upper_bound):
                 outlier_count += 1
         df_outlier.loc[i] = outlier_count
     return df_outlier

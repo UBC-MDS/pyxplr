@@ -42,29 +42,29 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 >>> explore_summary(dataset)
 categorical columns: []
 numeric columns: ['year', 'wheat', 'wages']
-                   year	    wheat	    wages
-count	      52.000000	 52.000000	50.000000
-Min.	    1565.000000	 26.000000	 5.000000
+                       year	     wheat	    wages
+count	          52.000000	 52.000000	50.000000
+Min.	        1565.000000	 26.000000	 5.000000
 1st Qu. 	1628.750000	 32.750000	 6.145000
 Median  	1692.500000	 40.750000	 7.800000
-Mean	    1692.500000	 43.057692	11.581600
+Mean	        1692.500000	 43.057692	11.581600
 3rd Qu. 	1756.250000	 46.625000	14.875000
-Max.	    1820.000000	 99.000000	30.000000
+Max.	        1820.000000	 99.000000	30.000000
 Variance	5741.666667	239.829940	53.821112
 
 >>> explore_outliers(my_df)
-	    outlier_count
-year	          0.0
-wheat	          5.0
-wages	         52.0
+	  outlier_count
+year	            0.0
+wheat	            5.0
+wages	           52.0
 
 >>> explore_missing(dataset, type = "location")
-    year	wheat	wages
-50	1815	 78.0	  NaN
-51	1820	 54.0	  NaN
+             year	wheat	wages
+50	    1815	 78.0	  NaN
+51	    1820	 54.0	  NaN
 
 >>> explore_missing(dataset, type = "count"))
-	    Number of missing values	Proportion of missing data
+	Number of missing values	Proportion of missing data
 year	                       0                   	  0.000000
 wheat	                       0                	  0.000000
 wages	                       2	                  0.038462

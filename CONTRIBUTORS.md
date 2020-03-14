@@ -3,7 +3,7 @@
 ## Development Team
 
 Name     | Github ID
-:------- |:-------
+------- | -------
 Braden Tam   | bradentam
 Furqan Khan  | fkhan72
 Serhiy Pokrovskyy | pokrovskyy

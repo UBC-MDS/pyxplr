@@ -1,1 +1,5 @@
-.. include:: ../CONTRIBUTORS.rst
+============
+Contributors
+============
+
+.. include:: ../CONTRIBUTORS.md

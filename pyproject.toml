@@ -10,14 +10,19 @@ python = "^3.7"
 pandas = "^1.0.1"
 numpy = "^1.18.1"
 altair = "^3.2.0"
+<<<<<<< HEAD
 vega_datasets = "^0.8.0"
 flake8 = "^3.7.9"
+=======
+>>>>>>> bc1ff61d54249ce2d3b0406d6f2b1979fe3bc544
 
 [tool.poetry.dev-dependencies]
 sphinx = "^2.4.3"
 sphinxcontrib-napoleon = "^0.7"
 pytest = "^5.3.5"
 pytest-cov = "^2.8.1"
+flake8 = "^3.7.9"
+vega_datasets = "^0.8.0"
 
 [build-system]
 requires = ["poetry>=0.12"]

@@ -39,7 +39,8 @@ def explore_missing(data, num_rows=0, type="location"):
 
     Examples
     --------
-    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4], 'col2': [2, 3, 4, 5, 6]})
+    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
+    >>>                      'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
         col1  col2
     0     2     3
@@ -75,9 +76,16 @@ def explore_missing(data, num_rows=0, type="location"):
 
     # number of missing values
     if type == "count":
+<<<<<<< HEAD
         return pd.DataFrame({'Number of missing values': np.sum(data.isnull()),
                              'Proportion of missing data': np.sum(data.isnull())
                              / len(data)})
+=======
+        return pd.DataFrame({
+            'Number of missing values': np.sum(data.isnull()),
+            'Proportion of missing data': np.sum(data.isnull()) / len(data)
+        })
+>>>>>>> bc1ff61d54249ce2d3b0406d6f2b1979fe3bc544
 
     # location of missing data
     if type == "location":

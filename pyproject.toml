@@ -17,7 +17,7 @@ patch_without_tag = "true"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-pandas = "^1.0.1"
+pandas = "*"
 numpy = "^1.18.1"
 altair = "^3.2.0"
 

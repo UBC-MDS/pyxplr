@@ -6,19 +6,20 @@ Implementation of the explore_missing function in the pyxplr package.
 import numpy as np
 import pandas as pd
 
-def explore_missing(data, num_rows = 0, type = "location"):
+
+def explore_missing(data, num_rows=0, type="location"):
     """
     explore_missing will explore missing observations within data. It will
-    return 1 of 2 tables: 1 table of exactly where there is missing data or 
-    another table showing how many observations are missing, and the 
-    proportion of how much data is missing for each feature. 
+    return 1 of 2 tables: 1 table of exactly where there is missing data or
+    another table showing how many observations are missing, and the
+    proportion of how much data is missing for each feature.
 
     Arguments
     ---------
     data : pandas.DataFrame
         The target dataframe to explore
     num_rows : integer
-        The number of rows above and below the missing value to output 
+        The number of rows above and below the missing value to output
     type: str
         The desired type of output (location or count)
 
@@ -38,7 +39,8 @@ def explore_missing(data, num_rows = 0, type = "location"):
 
     Examples
     --------
-    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4], 'col2': [2, 3, 4, 5, 6]})
+    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
+    >>>                      'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
         col1  col2
     0     2     3
@@ -60,22 +62,24 @@ def explore_missing(data, num_rows = 0, type = "location"):
 
     if len(indices) == 0:
         raise ValueError("There are no missing values in the dataframe")
-        
+
     new_indices = np.empty(0)
     for index in indices:
         for num in np.array(range(1, num_rows + 1)):
             new_indices = np.append(new_indices, index - num)
             new_indices = np.append(new_indices, index + num)
-    
+
     rows = np.unique(np.append(new_indices, indices))
-    
+
     # avoids index error
     rows = rows[(rows >= 0) & (rows < len(data))]
-    
+
     # number of missing values
     if type == "count":
-        return pd.DataFrame({'Number of missing values': np.sum(data.isnull()),
-                             'Proportion of missing data': np.sum(data.isnull()) / len(data)})
+        return pd.DataFrame({
+            'Number of missing values': np.sum(data.isnull()),
+            'Proportion of missing data': np.sum(data.isnull()) / len(data)
+        })
 
     # location of missing data
     if type == "location":

@@ -2,10 +2,12 @@
 
 ## Development Team
 
-* Braden Tam
-* Furqan Khan
-* Serhiy Pokrovskyy  
-* Yu Fang 
+Name     | Github ID
+------- | -------
+Braden Tam   | bradentam
+Furqan Khan  | fkhan72
+Serhiy Pokrovskyy | pokrovskyy
+Yu Fang | lori94
 
 ## Contributors
 

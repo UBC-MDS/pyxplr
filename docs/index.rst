@@ -8,7 +8,7 @@ Welcome to pyxplr's documentation!
    readme
    installation
    usage
-   modules
+   source/modules
    contributing
    contributors
 

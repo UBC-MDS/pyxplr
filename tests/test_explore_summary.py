@@ -17,7 +17,8 @@ def test_explore_summary():
     '''
     output = explore_summary(df)
     assert output.shape[0] == 8
-    
+
+
 def test_summary_data_output():
     '''
     Test if the statistical results are correct

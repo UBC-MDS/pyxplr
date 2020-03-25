@@ -20,11 +20,8 @@ python = "^3.7"
 pandas = "*"
 numpy = "^1.18.1"
 altair = "^3.2.0"
-<<<<<<< HEAD
 vega_datasets = "^0.8.0"
 flake8 = "^3.7.9"
-=======
->>>>>>> bc1ff61d54249ce2d3b0406d6f2b1979fe3bc544
 
 [tool.poetry.dev-dependencies]
 sphinx = "^2.4.3"

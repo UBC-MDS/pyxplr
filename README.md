@@ -4,12 +4,13 @@
 
 [![Documentation Status](https://readthedocs.org/projects/pyxplr/badge/?version=latest)](https://pyxplr.readthedocs.io/en/latest/?badge=latest)
 
-`pyxplr` is a python package to make explatory data analysis (EDA) simple and seamless. EDA is a crucial phase of the data science workflow as it allows us get a fist glimpse of the data. It is important to identify statistical characteristics of the data so that researchers can properly set up the rest of the analysis. This package will provide the tools required to conduct a thorough EDA.
+`pyxplr` is a python package to make exploratory data analysis (EDA) simple and seamless. EDA is a crucial phase of the data science workflow as it allows us get a fist glimpse of the data. It is important to identify statistical characteristics of the data so that researchers can properly set up the rest of the analysis. This package will provide the tools required to conduct a thorough EDA.
 
 ### Installation
 
 ```
-pip install -i https://test.pypi.org/simple/ pyxplr
+# Install with dependencies
+pip install --extra-index-url https://testpypi.python.org/pypi pyxplr
 ```
 
 ### Functions
@@ -31,17 +32,55 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Usage:
 
-``` 
-from xplyr import explore_summary
-from xplyr import explore_outliers
-from xplyr import explore_missing
-from xplyr import explore_feature_map
+```python
+import pyxplr
+import vega_datasets
 
-explore_summary(my_df)
-explore_outliers(my_df)
-explore_missing(my_df, num_rows = 1, type = "location")
-explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])
+iris_df = vega_datasets.data.iris()
+
+pyxplr.explore_summary(iris_df)
 ```
+
+```
+> categorical columns: ['species']
+> numeric columns: ['sepalLength', 'sepalWidth', 'petalLength', 'petalWidth']
+>           sepalLength  sepalWidth  petalLength  petalWidth
+> count      150.000000  150.000000   150.000000  150.000000
+> Min.         4.300000    2.000000     1.000000    0.100000
+> 1st Qu.      5.100000    2.800000     1.600000    0.300000
+> Median       5.800000    3.000000     4.350000    1.300000
+> Mean         5.843333    3.057333     3.758000    1.199333
+> 3rd Qu.      6.400000    3.300000     5.100000    1.800000
+> Max.         7.900000    4.400000     6.900000    2.500000
+> Variance     0.685694    0.189979     3.116278    0.581006
+```
+
+```python
+pyxplr.explore_outliers(iris_df)
+```
+
+```
+>              outlier_count
+> sepalLength            6.0
+> sepalWidth             5.0
+> petalLength            0.0
+> petalWidth             0.0
+```
+
+```python
+pyxplr.explore_missing(vega_datasets.data.wheat())
+```
+
+```
+>     year  wheat  wages
+> 50  1815   78.0    NaN
+> 51  1820   54.0    NaN
+```
+
+```python
+pyxplr.explore_feature_map(spotify_df)
+```
+
 ![](/imgs/feature_map.png)
 
 ### Documentation:
@@ -58,7 +97,7 @@ helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) f
 ### Contributors
 
 Name     | Github ID
-:------- |:-------
+------- | -------
 Braden Tam   | bradentam
 Furqan Khan  | fkhan72
 Serhiy Pokrovskyy | pokrovskyy

@@ -26,9 +26,9 @@ This python package will build using the [`pandas`](https://github.com/pandas-de
 
 ### Dependencies:
 
-- `pandas 1.0.1`
-- `numpy 1.18.1`
-- `altair 3.2.0`
+- [`pandas 1.0.1`](https://github.com/pandas-dev/pandas)  
+- [`numpy 1.18.1`](https://github.com/numpy/numpy)  
+- [`altair 3.2.0`](https://github.com/altair-viz/altair)  
 
 ### Usage:
 
@@ -98,9 +98,9 @@ helps, and credit will always be given. See [CONTRIBUTING.md](CONTRIBUTING.md) f
 
 Name     | Github ID
 ------- | -------
-Braden Tam   | bradentam
-Furqan Khan  | fkhan72
-Serhiy Pokrovskyy | pokrovskyy
-Yu Fang | lori94
+Braden Tam   | [bradentam](https://github.com/bradentam)  
+Furqan Khan  | [fkhan72](https://github.com/fkhan72)
+Serhiy Pokrovskyy | [pokrovskyy](https://github.com/pokrovskyy)
+Yu Fang | [lori94](https://github.com/lori94)  
 
 For the complete list of project contributors, see [CONTRIBUTORS.md](CONTRIBUTORS.md)

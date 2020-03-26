@@ -28,8 +28,9 @@ def explore_feature_map(df, features=[]):
 
     Raises
     ------
-    ValueError
+    TypeError
         Invalid data frame.
+    ValueError
         Invalid features specification.
         No numeric features present in the dataset.
         Features specification includes a non-existent feature.
@@ -52,7 +53,7 @@ def explore_feature_map(df, features=[]):
     """
 
     if not isinstance(df, pd.DataFrame):
-        raise ValueError('Invalid dataframe specified')
+        raise TypeError('Invalid dataframe specified')
 
     if df.shape[0] == 0:
         raise ValueError('Empty dataframe specified')

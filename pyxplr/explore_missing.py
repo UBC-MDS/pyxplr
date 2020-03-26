@@ -32,6 +32,8 @@ def explore_missing(df, num_rows=0, type="location"):
     Raises
     ------
     ValueError
+        num_rows must be a positive integer
+        num_rows must be of type int
         There are no missing values in the dataframe
     TypeError
         Data must be a pandas DataFrame
@@ -50,6 +52,12 @@ def explore_missing(df, num_rows=0, type="location"):
 
     if not (type == "count") | (type == "location"):
         raise NameError('Type must be either "count" or "location"')
+
+    if num_rows < 0:
+        raise ValueError("num_rows must be a positive integer")
+
+    if not isinstance(num_rows, type(1)):
+        raise ValueError("num_rows must be of type int")
 
     columns_empty_string = np.where(df.applymap(lambda x: x == ''))[0]
     columns_nan = np.where(df.isnull())[0]

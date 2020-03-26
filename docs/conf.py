@@ -18,11 +18,11 @@
 # relative to the documentation root, use os.path.abspath to make it
 # absolute, like shown here.
 #
+import pyxplr
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-import pyxplr
 
 # -- General configuration ---------------------------------------------
 
@@ -150,11 +150,12 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'pyxplr',
+    (master_doc,
+     'pyxplr',
      u'pyxplr Documentation',
      author,
      'pyxplr',
-     'pyxplr is a Python package to perform explanatory data analysis (EDA) simple and seamless',
+     'Python package to perform exploratory data analysis (EDA)',
      'Miscellaneous'),
 ]
 

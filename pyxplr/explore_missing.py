@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 
 
-def explore_missing(df, num_rows=0, type="location"):
+def explore_missing(df, num_rows=0, df_type="location"):
     """
     explore_missing will identify missing observations within df. It will
     return 1 of 2 tables: (location) 1 table of the exact location in the
@@ -21,7 +21,7 @@ def explore_missing(df, num_rows=0, type="location"):
         The target dataframe to explore
     num_rows : integer
         The number of rows above and below the missing value to output
-    type: str
+    df_type: str
         The desired type of output (location or count)
 
     Returns
@@ -45,19 +45,19 @@ def explore_missing(df, num_rows=0, type="location"):
     >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
                              'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
-    >>> explore_missing(test, type = "count")
+    >>> explore_missing(test, df_type = "count")
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Data must be a pandas DataFrame")
 
-    if not (type == "count") | (type == "location"):
+    if not (df_type == "count") | (df_type == "location"):
         raise NameError('Type must be either "count" or "location"')
-
-    if num_rows < 0:
-        raise ValueError("num_rows must be a positive integer")
 
     if not isinstance(num_rows, type(1)):
         raise ValueError("num_rows must be of type int")
+
+    if num_rows < 0:
+        raise ValueError("num_rows must be a positive integer")
 
     columns_empty_string = np.where(df.applymap(lambda x: x == ''))[0]
     columns_nan = np.where(df.isnull())[0]
@@ -80,11 +80,11 @@ def explore_missing(df, num_rows=0, type="location"):
 
     # number of missing values
     total = np.sum(df.applymap(lambda x: x == '')) + np.sum(df.isnull())
-    if type == "count":
+    if df_type == "count":
         return pd.DataFrame({'Number of missing values': total,
                              'Proportion of missing data': total
                              / len(df)})
 
     # location of missing data
-    if type == "location":
+    if df_type == "location":
         return pd.DataFrame(df.iloc[rows])

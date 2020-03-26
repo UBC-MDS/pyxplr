@@ -47,7 +47,7 @@ def test_value_1_error():
     Tests that the function raises an error for not having a positive integer.
     """
     try:
-        explore_missing(test_1, num_rows = -5)
+        explore_missing(test_1, num_rows=-5)
     except BaseException:
         assert True
 
@@ -57,7 +57,7 @@ def test_value_2_error():
     Tests that the function raises an error for not having a valid integer.
     """
     try:
-        explore_missing(test_1, num_rows = 1.2)
+        explore_missing(test_1, num_rows=1.2)
     except BaseException:
         assert True
 

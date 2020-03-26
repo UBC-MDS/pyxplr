@@ -41,7 +41,7 @@ def explore_missing(df, num_rows=0, type="location"):
     Examples
     --------
     >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
-                             'col2': [2, 3, 4, 5, 6]})
+    >>>                      'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
     >>> explore_missing(test, type = "count")
     """

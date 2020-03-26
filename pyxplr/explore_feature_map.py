@@ -45,9 +45,10 @@ def explore_feature_map(df, features=[]):
 
     Examples
     --------
-    from pyxplr import explore_feature_map
-
-    explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])
+    >>> df = pd.DataFrame({'col1': [1, 2, 4, 3, -1, 10],
+    >>>                    'col2': [3, 1 ,5, -2, 3, -1],
+    >>>                    'col3': [8, 1, 2, 3, 11, 10]})
+    >>> explore_feature_map(df)
     """
 
     if not isinstance(df, pd.DataFrame):

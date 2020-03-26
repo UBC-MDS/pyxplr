@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyxplr"
-version = "0.3.7"
+version = "0.3.10"
 description = "Python package that provides some basic data information for EDA!"
 authors = ["Braden Tam", "Furqan Khan", "Serg Pokrovskyy", "Yu Fang"]
 license = "MIT"
@@ -20,6 +20,8 @@ python = "^3.7"
 pandas = "*"
 numpy = "^1.18.1"
 altair = "^3.2.0"
+vega_datasets = "^0.8.0"
+flake8 = "^3.7.9"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^2.4.3"

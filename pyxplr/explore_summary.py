@@ -45,12 +45,14 @@ def explore_summary(df):
     # Max.       44.0  17.0
     # Variance  312.7  45.3
     """
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Data must be a pandas DataFrame")
     ctg_index = []
     ctg = []
     num_index = []
     num = []
     for i in range(len(df.columns)):
-        random = random = rd.randint(0, len(df) - 1)
+        random = rd.randint(0, len(df) - 1)
         a = df.iat[random, i]
         if isinstance(a, str):
             ctg_index.append(i)

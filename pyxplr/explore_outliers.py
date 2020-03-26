@@ -3,9 +3,9 @@ import pandas as pd
 
 def explore_outliers(df, std_range):
     """
-    Explores outliers in each feature of dataset based on given standard deviation
-    range. Before calculation, NA rows are dropped and only numeric columns are 
-    considered for calculation.
+    Explores outliers in each feature of dataset based on given standard
+    deviation range. Before calculation, NA rows are dropped and only numeric
+    columns are considered for calculation.
 
     Arguments
     ---------

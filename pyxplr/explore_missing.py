@@ -3,20 +3,21 @@ Created on February 28, 2020
 @author: Braden Tam
 Implementation of the explore_missing function in the pyxplr package.
 """
-import numpy as np
 import pandas as pd
+import numpy as np
 
 
-def explore_missing(data, num_rows=0, type="location"):
+def explore_missing(df, num_rows=0, type="location"):
     """
-    explore_missing will explore missing observations within data. It will
-    return 1 of 2 tables: 1 table of exactly where there is missing data or
-    another table showing how many observations are missing, and the
-    proportion of how much data is missing for each feature.
+    explore_missing will identify missing observations within df. It will
+    return 1 of 2 tables: (location) 1 table of the exact location in the
+    dataframe where there is missing data or (count) another table showing
+    how many observationsare missing and the proportion of how much data is
+    missing for each feature.
 
     Arguments
     ---------
-    data : pandas.DataFrame
+    df : pandas.DataFrame
         The target dataframe to explore
     num_rows : integer
         The number of rows above and below the missing value to output
@@ -40,25 +41,20 @@ def explore_missing(data, num_rows=0, type="location"):
     Examples
     --------
     >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
-    >>>                      'col2': [2, 3, 4, 5, 6]})
+                             'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
-        col1  col2
-    0     2     3
-    1    NaN    4
-    2     3     5
     >>> explore_missing(test, type = "count")
-            Number of missing values	Proportion of missing data
-    col 0                          1                           0.2
-    col 1                          0                             0
-
     """
-    if not isinstance(data, pd.DataFrame):
+    if not isinstance(df, pd.DataFrame):
         raise TypeError("Data must be a pandas DataFrame")
 
     if not (type == "count") | (type == "location"):
         raise NameError('Type must be either "count" or "location"')
 
-    indices = np.where(data.isnull())[0]
+    columns_empty_string = np.where(df.applymap(lambda x: x == ''))[0]
+    columns_nan = np.where(df.isnull())[0]
+
+    indices = np.append(columns_empty_string, columns_nan)
 
     if len(indices) == 0:
         raise ValueError("There are no missing values in the dataframe")
@@ -72,14 +68,16 @@ def explore_missing(data, num_rows=0, type="location"):
     rows = np.unique(np.append(new_indices, indices))
 
     # avoids index error
-    rows = rows[(rows >= 0) & (rows < len(data))]
+    rows = rows[(rows >= 0) & (rows < len(df))]
 
     # number of missing values
+    total = np.sum(df.applymap(lambda x: x == '')) + np.sum(df.isnull())
     if type == "count":
-        return pd.DataFrame({'Number of missing values': np.sum(data.isnull()),
-                             'Proportion of missing data': np.sum(data.isnull())
-                             / len(data)})
+        return pd.DataFrame({'Number of missing values': total,
+                             'Proportion of missing data': total
+                             / len(df)})
 
     # location of missing data
     if type == "location":
-        return pd.DataFrame(data.iloc[rows])
+        return pd.DataFrame(df.iloc[rows])
+    

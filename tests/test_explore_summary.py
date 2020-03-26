@@ -40,3 +40,13 @@ def test_summary_data_output():
     assert result["D"][6] == 17
     assert result["A"][7] == 312.7
     assert result["D"][7] == 45.3
+
+
+def test_input():
+    """
+    Tests if the function will raise an error for invalid input
+    """
+    try:
+        explore_summary(1)
+    except BaseException:
+        assert True

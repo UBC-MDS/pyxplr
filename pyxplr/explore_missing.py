@@ -6,12 +6,13 @@ Implementation of the explore_missing function in the pyxplr package.
 import pandas as pd
 import numpy as np
 
+
 def explore_missing(df, num_rows=0, type="location"):
     """
     explore_missing will identify missing observations within df. It will
-    return 1 of 2 tables: (location) 1 table of the exact location in the 
-    dataframe where there is missing data or (count) another table showing 
-    how many observationsare missing and the proportion of how much data is 
+    return 1 of 2 tables: (location) 1 table of the exact location in the
+    dataframe where there is missing data or (count) another table showing
+    how many observationsare missing and the proportion of how much data is
     missing for each feature.
 
     Arguments
@@ -39,7 +40,8 @@ def explore_missing(df, num_rows=0, type="location"):
 
     Examples
     --------
-    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4], 'col2': [2, 3, 4, 5, 6]})
+    >>> test = pd.DataFrame({'col1': [1, 2, None, 3, 4],
+                             'col2': [2, 3, 4, 5, 6]})
     >>> explore_missing(test, num_rows = 1)
     >>> explore_missing(test, type = "count")
     """
@@ -48,10 +50,10 @@ def explore_missing(df, num_rows=0, type="location"):
 
     if not (type == "count") | (type == "location"):
         raise NameError('Type must be either "count" or "location"')
-    
+
     columns_empty_string = np.where(df.applymap(lambda x: x == ''))[0]
     columns_nan = np.where(df.isnull())[0]
-    
+
     indices = np.append(columns_empty_string, columns_nan)
 
     if len(indices) == 0:

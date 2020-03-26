@@ -9,9 +9,10 @@ def explore_outliers(df, std_range):
 
     Arguments
     ---------
-     df : pandas.DataFrame
-        The target dataframe to explore
-    std_range : number of standard deviations used to find outliers
+    df : pandas.DataFrame
+        Target dataframe to explore
+    std_range : integer
+        Number of standard deviations used to find outliers
 
     Returns
     -------

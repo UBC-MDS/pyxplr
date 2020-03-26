@@ -77,3 +77,12 @@ def test_explore_feature_map_empty_dataframe_check():
     """
     with pytest.raises(ValueError, match='Empty dataframe'):
         explore_feature_map(pd.DataFrame())
+
+
+def test_explore_feature_map_missing_data():
+    """
+    Test missing data passed in the data frame
+    """
+    with pytest.raises(ValueError, match='not include any missing data'):
+        explore_feature_map(pd.DataFrame({'col1': [1, 2, None, 3, 4],
+                                          'col2': [2, 3, 4, 5, 6]}))

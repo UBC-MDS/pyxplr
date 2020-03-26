@@ -13,6 +13,9 @@ def explore_feature_map(df, features=[]):
     are shown above main diagonal. Pairwise feature joint distributions
     are shown below main diagonal.
 
+    NOTE: Non-numeric features will be skipped. All passed features should
+    not include any missing data, otherwise an error will be raised.
+
     Arguments
     ---------
     dataframe : pandas.DataFrame
@@ -33,6 +36,7 @@ def explore_feature_map(df, features=[]):
     ValueError
         Invalid features specification.
         No numeric features present in the dataset.
+        Dataframe must not include any missing data.
         Features specification includes a non-existent feature.
         Features specification includes a non-numeric feature.
 
@@ -74,6 +78,9 @@ def explore_feature_map(df, features=[]):
 
     if len(df.columns) == 0:
         raise ValueError('No numeric columns selected in the dataframe')
+
+    if np.isnan(df.to_numpy()).sum() > 0:
+        raise ValueError('Dataframe must not include any missing data')
 
     chart = None
     checked_pairs = set()

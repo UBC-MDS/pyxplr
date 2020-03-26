@@ -43,7 +43,7 @@ def test_explore_feature_map_dataframe_check():
     """
     Test passing invalid data frame param
     """
-    with pytest.raises(ValueError, match='Invalid dataframe'):
+    with pytest.raises(TypeError, match='Invalid dataframe'):
         explore_feature_map('not a dataframe')
 
 

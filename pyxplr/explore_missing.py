@@ -80,4 +80,3 @@ def explore_missing(df, num_rows=0, type="location"):
     # location of missing data
     if type == "location":
         return pd.DataFrame(df.iloc[rows])
-    

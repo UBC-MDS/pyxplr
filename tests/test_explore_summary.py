@@ -40,4 +40,3 @@ def test_summary_data_output():
     assert result["D"][6] == 17
     assert result["A"][7] == 312.7
     assert result["D"][7] == 45.3
-    

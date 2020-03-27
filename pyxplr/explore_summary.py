@@ -24,26 +24,12 @@ def explore_summary(df):
 
     Examples
     --------
-    df = pd.DataFrame({"A":[12, 4, 5, 44, 1], \
-                       "B":["apple", "banada", "orange", \
-                            "strawberry", "blueberry"], \
-                       "C":["2", "1", "3", "4", "6"], \
-                       "D":[14, 3, 17, 2, 6]})
-
-    explore_summary(df)
-
-    # categorical columns: ['B', 'C']
-    # numeric columns: ['A', 'D']
-    #
-    #               A     D
-    # count       5.0   5.0
-    # Min.        1.0   2.0
-    # 1st Qu.     4.0   3.0
-    # Median      5.0   6.0
-    # Mean       13.2   8.4
-    # 3rd Qu.    12.0  14.0
-    # Max.       44.0  17.0
-    # Variance  312.7  45.3
+    >>> df = pd.DataFrame({"A":[12, 4, 5, 44, 1],
+    >>>                    "B":["apple", "banada", "orange",
+    >>>                         "strawberry", "blueberry"],
+    >>>                    "C":["2", "1", "3", "4", "6"],
+    >>>                    "D":[14, 3, 17, 2, 6]})
+    >>> explore_summary(df)
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Data must be a pandas DataFrame")

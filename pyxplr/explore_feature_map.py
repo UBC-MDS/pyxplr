@@ -13,6 +13,9 @@ def explore_feature_map(df, features=[]):
     are shown above main diagonal. Pairwise feature joint distributions
     are shown below main diagonal.
 
+    NOTE: Non-numeric features will be skipped. All passed features should
+    not include any missing data, otherwise an error will be raised.
+
     Arguments
     ---------
     dataframe : pandas.DataFrame
@@ -28,10 +31,12 @@ def explore_feature_map(df, features=[]):
 
     Raises
     ------
-    ValueError
+    TypeError
         Invalid data frame.
+    ValueError
         Invalid features specification.
         No numeric features present in the dataset.
+        Dataframe must not include any missing data.
         Features specification includes a non-existent feature.
         Features specification includes a non-numeric feature.
 
@@ -45,13 +50,14 @@ def explore_feature_map(df, features=[]):
 
     Examples
     --------
-    from pyxplr import explore_feature_map
-
-    explore_feature_map(my_df, ['feature1', 'feature2', 'feature3'])
+    >>> df = pd.DataFrame({'col1': [1, 2, 4, 3, -1, 10],
+    >>>                    'col2': [3, 1 ,5, -2, 3, -1],
+    >>>                    'col3': [8, 1, 2, 3, 11, 10]})
+    >>> explore_feature_map(df)
     """
 
     if not isinstance(df, pd.DataFrame):
-        raise ValueError('Invalid dataframe specified')
+        raise TypeError('Invalid dataframe specified')
 
     if df.shape[0] == 0:
         raise ValueError('Empty dataframe specified')
@@ -72,6 +78,9 @@ def explore_feature_map(df, features=[]):
 
     if len(df.columns) == 0:
         raise ValueError('No numeric columns selected in the dataframe')
+
+    if np.isnan(df.to_numpy()).sum() > 0:
+        raise ValueError('Dataframe must not include any missing data')
 
     chart = None
     checked_pairs = set()

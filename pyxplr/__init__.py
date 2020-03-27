@@ -1,4 +1,4 @@
-__version__ = '0.4.12'
+__version__ = '0.4.13'
 
 from pyxplr.explore_feature_map import explore_feature_map  # noqa
 from pyxplr.explore_missing import explore_missing  # noqa

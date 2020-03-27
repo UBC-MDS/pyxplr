@@ -29,8 +29,8 @@ def test_count():
     """
     Tests the output values of the "count" type dataframe.
     """
-    assert explore_missing(test_1, type="count").iloc[0, 0] == 1.0
-    assert explore_missing(test_1, type="count").iloc[0, 1] == 0.1
+    assert explore_missing(test_1, df_type="count").iloc[0, 0] == 1.0
+    assert explore_missing(test_1, df_type="count").iloc[0, 1] == 0.1
 
 
 def test_type():
@@ -38,8 +38,8 @@ def test_type():
     Tests the output type.
     """
     assert isinstance(explore_missing(test_1), pd.DataFrame)
-    assert isinstance(explore_missing(test_1, type="count"), pd.DataFrame)
-    assert isinstance(explore_missing(test_1, type="location"), pd.DataFrame)
+    assert isinstance(explore_missing(test_1, df_type="count"), pd.DataFrame)
+    assert isinstance(explore_missing(test_1, df_type="location"), pd.DataFrame)
 
 
 def test_value_1_error():
@@ -88,6 +88,6 @@ def test_name_error():
     input for the type argument.
     """
     try:
-        explore_missing(test_1, type="loc")
+        explore_missing(test_1, df_type="loc")
     except BaseException:
         assert True

@@ -53,7 +53,7 @@ def explore_missing(df, num_rows=0, df_type="location"):
     if not (df_type == "count") | (df_type == "location"):
         raise NameError('Type must be either "count" or "location"')
 
-    if not isinstance(num_rows, type(1)):
+    if not isinstance(num_rows, int):
         raise ValueError("num_rows must be of type int")
 
     if num_rows < 0:

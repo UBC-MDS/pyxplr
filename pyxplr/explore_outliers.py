@@ -29,9 +29,9 @@ def explore_outliers(df, std_range):
 
     Examples
     --------
-    df = pd.DataFrame({'col1': [1, 2, 1.00, 3, -1, 100], \
-                       'col2': [3, 1 ,5, -2, 3, -1]})
-    explore_outliers(df, 2)
+    >>> df = pd.DataFrame({'col1': [1, 2, 1.00, 3, -1, 100],
+    >>>                    'col2': [3, 1 ,5, -2, 3, -1]})
+    >>> explore_outliers(df, 2)
     """
     if not isinstance(df, pd.DataFrame):
         raise TypeError("input data type must be pandas.DataFrame")

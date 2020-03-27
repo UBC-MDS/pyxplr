@@ -22,7 +22,6 @@ def test_length():
     assert len(explore_missing(test_1, 1)) == 7
     assert len(explore_missing(test_1, 2)) == 10
     assert len(explore_missing(test_1, 30)) == 10
-    assert len(explore_missing(test_1, -2)) == 3
 
 
 def test_count():

@@ -38,7 +38,11 @@ def test_type():
     """
     assert isinstance(explore_missing(test_1), pd.DataFrame)
     assert isinstance(explore_missing(test_1, df_type="count"), pd.DataFrame)
-    assert isinstance(explore_missing(test_1, df_type="location"), pd.DataFrame)
+    assert isinstance(
+        explore_missing(
+            test_1,
+            df_type="location"),
+        pd.DataFrame)
 
 
 def test_value_1_error():
